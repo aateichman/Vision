@@ -22,28 +22,28 @@ class move:
 
 class gpioHelp: 
 	def __init__(self):
-	gpio.setwarnings(False)
-	gpio.setmode(gpio.BCM)
-	gpio.setup(22, gpio.OUT)
-	gpio.setup(4, gpio.OUT)
-	gpio.setup(17, gpio.OUT)
-	gpio.setup(27, gpio.OUT)
+		gpio.setwarnings(False)
+		gpio.setmode(gpio.BCM)
+		gpio.setup(22, gpio.OUT)
+		gpio.setup(4, gpio.OUT)
+		gpio.setup(17, gpio.OUT)
+		gpio.setup(27, gpio.OUT)
 
 	def Move(self,Move):
-		gpio.output(4,Move.getRB)
-		gpio.output(17,Move.getLB)
-		gpio.output(22,Move.getRF)
-		gpio.output(27,Move.getLF)
-		time.sleep(Move.sleep)
+		gpio.output(4,Move.getRB())
+		gpio.output(17,Move.getLB())
+		gpio.output(22,Move.getRF())
+		gpio.output(27,Move.getLF())
+		time.sleep(Move.getSleep())
 
 moveHELP = gpioHelp()
 
-def moveForward(self, t):
+def moveForward(t):
 	for x in range (0,100):
 		d = move(gpio.HIGH,gpio.LOW,gpio.HIGH,gpio.LOW,10)
 		moveHELP.Move(d);
 
-
+moveForward(100)
 	
 
 
